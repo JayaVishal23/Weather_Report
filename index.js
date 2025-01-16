@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
-const api_id = "7a441c7d3209d3b69a9430c508bbb870";
+const api_id = process.env.API_KEY;;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
