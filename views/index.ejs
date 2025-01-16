@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link href="styles/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <form action="/" method="post" class="form-main">
+          <input
+            type="text"
+            name="uloc"
+            placeholder="Enter CityName"
+            class="cityname"
+            required
+          />
+          <button class="btn" type="submit">check</button>
+        </form>
+        <div class="inform">
+          <%if(locals.location){%>
+          <div class="weather-data">
+            <p>Location: <em><%=location %></em></p>
+            <p>Description: <%=description %></p>
+            <p>Temperature: <strong><%=temperature %>°C</strong></p>
+            <p>Feels like: <strong><%=feelslike %>°C</strong></p>
+            <p>Wind Speed: <%=windspeed %></p>
+          </div>
+          <%}else{%> <%if(locals.error){%>
+          <p class="weather-data">Please enter correct City name</p>
+          <%}else{%>
+          <p class="weather-data">Welcome to weather Report</p>
+          <%}%> <%}%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
